@@ -1,11 +1,12 @@
 import Link from 'next/link';
 import ClientCmp from './objectsCmp';
+import { binding } from 'cf-bindings-proxy';
 
 export const runtime = 'edge';
 
 export default async function PageWithClientCmp() {
 
-  const myR2 = process.env.MY_R2;
+  const myR2 = binding<R2Bucket>('MY_R2');
 
   const r2Objects = (await myR2.list()).objects;
 

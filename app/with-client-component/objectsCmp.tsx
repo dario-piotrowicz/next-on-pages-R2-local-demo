@@ -21,7 +21,8 @@ export default async function ClientCmp({ r2Objects }: { r2Objects: R2Object[] }
                 {obj.size}
             </span>
             <span>
-            {obj.uploaded.toLocaleDateString()}
+            {/* NOTE: cf-bindings-proxy returns a string as `uploaded` instead of a date so we need to convert it */}
+            {new Date(obj.uploaded).toLocaleDateString()}
             </span>
             </li>)
         }

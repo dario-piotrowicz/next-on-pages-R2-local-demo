@@ -1,10 +1,11 @@
 import Link from 'next/link';
+import { binding } from 'cf-bindings-proxy';
 
 export const runtime = 'edge';
 
 export default async function Home() {
 
-  const myR2 = process.env.MY_R2;
+  const myR2 = binding<R2Bucket>('MY_R2');
 
   const r2Objects = (await myR2.list()).objects;
 
@@ -38,7 +39,8 @@ export default async function Home() {
                   {obj.size}
                 </span>
                 <span>
-                {obj.uploaded.toLocaleDateString()}
+                {/* NOTE: cf-bindings-proxy returns a string as `uploaded` instead of a date so we need to convert it */}
+                {new Date(obj.uploaded).toLocaleDateString()}
                 </span>
               </li>)
             }

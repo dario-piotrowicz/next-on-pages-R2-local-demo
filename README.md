@@ -13,7 +13,11 @@ Install dependencies:
 $ npm i
 ```
 
-Then to run the app using `next dev` (with the [dev-bindings](https://github.com/cloudflare/next-on-pages/pull/486) implemented using Miniflare's magic proxy):
+Then to run the app using `next dev` (with the [cf-bindings-proxy](https://github.com/james-elicx/cf-bindings-proxy)), run in two separate terminals:
+```
+$ npx run pages:proxy
+```
+and
 ```
 $ npm run dev
 ```

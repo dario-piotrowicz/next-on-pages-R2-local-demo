@@ -1,7 +1,9 @@
+import { binding } from 'cf-bindings-proxy';
+
 export const runtime = 'edge'
 
 export async function GET() {
-  const myR2 = process.env.MY_R2;
+  const myR2 = binding<R2Bucket>('MY_R2');
 
   const r2Objects = (await myR2.list()).objects;
 
