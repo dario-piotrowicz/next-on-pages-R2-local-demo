@@ -7,10 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "pages:build": "npx @cloudflare/next-on-pages@1",
+    "pages:build": "npx @cloudflare/next-on-pages",
     "pages:deploy": "npm run pages:build && wrangler pages deploy .vercel/output/static",
     "pages:watch": "npx @cloudflare/next-on-pages@1 --watch",
-    "pages:dev": "npx wrangler pages dev .vercel/output/static --compatibility-flag=nodejs_compat"
+    "pages:dev": "npx wrangler pages dev .vercel/output/static --compatibility-flag=nodejs_compat --r2 MY_R2"
   },
   "dependencies": {
     "@types/node": "20.8.3",
@@ -22,7 +22,9 @@
     "typescript": "5.2.2"
   },
   "devDependencies": {
-    "@cloudflare/next-on-pages": "^1.6.3",
-    "vercel": "^32.4.1"
+    "@cloudflare/next-on-pages": "https://prerelease-registry.devprod.cloudflare.dev/next-on-pages/runs/6441666485/npm-package-next-on-pages-486",
+    "vercel": "^32.4.1",
+    "wrangler":"^3.11.0",
+    "@cloudflare/workers-types": "^4.20231002.0"
   }
 }
