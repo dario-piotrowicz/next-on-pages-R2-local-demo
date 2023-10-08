@@ -5,3 +5,23 @@ ul {
 li {
   margin-block: 1rem;
 }
+
+.home-li {
+  display: flex;
+  width: 90vw;
+
+  &.bold {
+    font-weight: bold;
+  }
+
+  & > span {
+    text-align: center;
+    flex: 1;
+  }
+}
+
+a.with-client-component {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+}

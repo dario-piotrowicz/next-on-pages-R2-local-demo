@@ -1,4 +1,4 @@
-import './page.css'
+import Link from 'next/link';
 
 export const runtime = 'edge';
 
@@ -44,6 +44,9 @@ export default async function Home() {
             }
           </ul>
         </div>
+      }
+      {
+        !empty && <Link className='with-client-component' href='/with-client-component'>With client component</Link>
       }
     </main>
   )
