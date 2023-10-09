@@ -38,7 +38,7 @@ export default async function Home() {
                   {obj.size}
                 </span>
                 <span>
-                {obj.uploaded.toLocaleDateString()}
+                {obj.uploaded.toISOString()}
                 </span>
               </li>)
             }

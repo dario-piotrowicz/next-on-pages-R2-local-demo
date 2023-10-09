@@ -2,7 +2,7 @@
 
 export const runtime = 'edge';
 
-export default async function ClientCmp({ r2Objects }: { r2Objects: R2Object[] }) {
+export default function ClientCmp({ r2Objects }: { r2Objects: R2Object[] }) {
   return (
     <div>
         <h2>The MY_R2 bucket contains the following objects:</h2>
@@ -21,7 +21,11 @@ export default async function ClientCmp({ r2Objects }: { r2Objects: R2Object[] }
                 {obj.size}
             </span>
             <span>
-            {obj.uploaded.toLocaleDateString()}
+              {/*
+                Note: obj.uploaded is of type Date, but when serialized by Next.js it actually
+                becomes a string
+              */}
+            {new Date(obj.uploaded).toISOString()}
             </span>
             </li>)
         }
