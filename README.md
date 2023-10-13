@@ -13,7 +13,7 @@ Install dependencies:
 $ npm i
 ```
 
-Then to run the app using `next dev` (with the [dev-bindings](https://github.com/cloudflare/next-on-pages/pull/486) implemented using Miniflare's magic proxy):
+Then to run the app using `next dev` (with the [next-dev](https://github.com/cloudflare/next-on-pages/pull/486) implemented using Miniflare's magic proxy):
 ```
 $ npm run dev
 ```
@@ -23,7 +23,7 @@ To instead run the application using `wrangler`, start by building the worker:
 $ npm run pages:build
 ```
 (or `pages:build:watch` for building in watch mode)
-abd then run:
+and then run:
 ```
 $ npm run pages:dev
 ```
