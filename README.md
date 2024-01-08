@@ -1,5 +1,9 @@
 # next-on-pages R2 local demo
 
+> [!WARNING]
+> This demo is no longer relevant and has been superseded by:<br>
+> https://github.com/dario-piotrowicz/next-on-pages-stable-next-dev-test-demo
+
 The app contains two routes:
  - `/` which displays the content of `MY_R2` only using server components
  - `/with-client-component` which also simply displays the content of `MY_R2` but it does so by passing the `R2Object`s to a client component (thus causing the objects to be serialized)
